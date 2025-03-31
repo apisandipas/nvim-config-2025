@@ -16,7 +16,7 @@ M.config = function()
   local wk = require("which-key")
 
   wk.add({
-    { "<leader>gc", "<cmd>Neogit" },
+    { "<leader>gs", "<cmd>Neogit <cr>", desc = "Git Status" },
   })
 end
 
