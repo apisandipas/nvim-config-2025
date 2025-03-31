@@ -13,7 +13,11 @@ local M = {
 }
 
 M.config = function()
-  require()
+  local wk = require("which-key")
+
+  wk.add({
+    { "<leader>gc", "<cmd>Neogit" },
+  })
 end
 
 return M
