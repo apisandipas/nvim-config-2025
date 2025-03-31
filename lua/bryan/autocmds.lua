@@ -56,12 +56,12 @@ vim.api.nvim_create_autocmd("BufLeave", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "NvimTree_*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.bo.filetype == "NvimTree" then
-      vim.cmd("quit")
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "NvimTree_*",
+--   callback = function()
+--     local layout = vim.api.nvim_call_function("winlayout", {})
+--     if layout[1] == "leaf" and vim.bo.filetype == "NvimTree" then
+--       vim.cmd("quit")
+--     end
+--   end,
+-- })

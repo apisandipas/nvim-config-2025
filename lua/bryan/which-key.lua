@@ -27,6 +27,10 @@ M.config = function()
     { "<leader>s", group = "+splits" },
     { "<leader>t", group = "+tabs" },
     { "<leader>w", group = "+sessions" },
+    { "<leader>p", group = "+plugins" },
+    { "<leader>pp", "<cmd>Lazy<cr>", desc = "See Lazy UI" },
+    { "<leader>pi", "<cmd>Lazy install<cr>", desc = "Install Plugins" },
+    { "<leader>pu", "<cmd>Lazy update<cr>", desc = "Update Plugins" },
   })
 end
 return M
