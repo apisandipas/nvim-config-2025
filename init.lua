@@ -19,7 +19,7 @@ spec("bryan.formatting")
 spec("bryan.linting")
 spec("bryan.trouble")
 spec("bryan.neogit")
---spec("bryan.neotree")
+spec("bryan.ai")
 spec("bryan.nvim-tree")
 spec("bryan.autopairs")
 
