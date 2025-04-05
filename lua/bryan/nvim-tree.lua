@@ -20,6 +20,26 @@ M.config = function()
     },
     view = {
       width = 32,
+      adaptive_size = true,
+      centralize_selection = false,
+      -- hide_root_folder = true,
+      side = "left",
+      preserve_window_proportions = false,
+      number = false,
+      relativenumber = false,
+      signcolumn = "no",
+      float = {
+        enable = true,
+        quit_on_focus_loss = true,
+        open_win_config = {
+          relative = "editor",
+          border = "rounded",
+          width = 30,
+          height = 40,
+          row = 1,
+          col = 1,
+        },
+      },
     },
     renderer = {
       highlight_git = true,

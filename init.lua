@@ -22,5 +22,6 @@ spec("bryan.neogit")
 spec("bryan.ai")
 spec("bryan.nvim-tree")
 spec("bryan.autopairs")
+spec("bryan.noice")
 
 require("bryan.lazy")
