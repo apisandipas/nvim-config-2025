@@ -1,4 +1,3 @@
-
 local M = {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {
@@ -10,7 +9,7 @@ local M = {
 M.servers = {
   -- "eslint",
   "lua_ls",
-   --"cssls",
+  --"cssls",
   -- "html-lsp",
   "ts_ls",
   "astro",
@@ -25,7 +24,7 @@ M.servers = {
 function M.config()
   local wk = require("which-key")
   wk.add({
-    {"<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" },
+    { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" },
   })
 
   require("mason").setup({

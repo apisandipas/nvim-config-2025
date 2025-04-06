@@ -52,8 +52,8 @@ function M.config()
   local wk = require("which-key")
   wk.add({
     { "<leader>l", group = "+lsp" },
-    { "<F2>",      "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
-    { "<F12>",     "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
+    { "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+    { "<F12>", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
   })
 
   local lspconfig = require("lspconfig")
@@ -63,7 +63,7 @@ function M.config()
     "lua_ls",
     "cssls",
     "html",
-    --"ts_ls",
+    "ts_ls",
     "bashls",
     "jsonls",
     "yamlls",
@@ -78,9 +78,9 @@ function M.config()
       active = true,
       values = {
         { name = "DiagnosticSignError", text = icons.diagnostics.Error },
-        { name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
-        { name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
-        { name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
+        { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+        { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+        { name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
       },
     },
     virtual_text = true,

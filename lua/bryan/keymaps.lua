@@ -35,7 +35,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("v", ">", ">gv", { desc = "Indent visual selection right" })
 keymap.set("v", "<", "<gv", { desc = "Indent visual selection left" })
--- keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
--- keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 keymap.set("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", { desc = "Go to Definition" })
 keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", { desc = "Go to References" })
