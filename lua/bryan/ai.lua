@@ -8,7 +8,7 @@ local M = {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+    "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
@@ -28,7 +28,7 @@ local M = {
     },
     {
       -- Make sure to set this up properly if you have lazy=true
-      "MeanderingProgrammer/render-markdown.nvim",
+      "MeanderingProgammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },
       },
@@ -43,7 +43,7 @@ M.config = function()
       auto_suggestions = true,
     },
     rules = {
-      project_dir = ".avante/rules", -- relative to project root, can also be an absolute path
+      project_dir = ".avante/rules",         -- relative to project root, can also be an absolute path
       global_dir = "~/.config/avante/rules", -- absolute path
     },
   })

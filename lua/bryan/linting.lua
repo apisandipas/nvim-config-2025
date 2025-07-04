@@ -1,38 +1,80 @@
-local M = {
+local M = {}
+
+M = {
   "mfussenegger/nvim-lint",
-  lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
-} -- to disable, comment this out
+  event = "VeryLazy",
+  opts = {
+    linters_by_ft = {
+      -- cspell: npm install -g cspell@latest
+      -- codespell: ux tool install codespell
+      -- ["*"] = { "cspell", "codespell" },
+      -- oxlint: npm install -g oxlint@latest
+      javascript = { "eslint_d" },
+      typescript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+    },
+    linters = {
+      eslint_d = {
+        args = {
+          "--no-warn-ignored", -- Ignore warnings, support Eslint 9
+          "--format",
+          "json",
+          "--stdin",
+          "--stdin-filename",
+          function()
+            return vim.api.nvim_buf_get_name(0)
+          end,
+        },
+      },
+    },
+  },
+}
 
-M.config = function()
-  local lint = require("lint")
-  local my_utils = require("bryan.my_utils")
+M.config = function(_, opts)
+  local lint = require "lint"
+  lint.linters_by_ft = opts.linters_by_ft
 
-  local linters_by_ft = {
-    javascript = { "eslint_d" },
-    typescript = { "eslint_d" },
-    javascriptreact = { "eslint_d" },
-    typescriptreact = { "eslint_d" },
-  }
+  -- Ignore issue with missing eslint config file
+  lint.linters.eslint_d = require("lint.util").wrap(lint.linters.eslint_d, function(diagnostic)
+    if diagnostic.message:find "Error: Could not find config file" then
+      return nil
+    end
+    return diagnostic
+  end)
 
-  local js_file_types = my_utils.get_keys(lint.linters_by_ft)
+  vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+    callback = function()
+      local names = lint._resolve_linter_by_ft(vim.bo.filetype)
 
-  local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+      -- Create a copy of the names table to avoid modifying the original.
+      names = vim.list_extend({}, names)
 
-  vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-    group = lint_augroup,
-    callback = function(args)
-      local filetype = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
-      local names_override = nil
+      -- Add fallback linters.
+      if #names == 0 then
+        vim.list_extend(names, lint.linters_by_ft["_"] or {})
+      end
 
-      if vim.tbl_contains(js_file_types, filetype) then
-        if require("lspconfig.util").root_pattern("eslint.config.mjs")(args.buf) then
-          names_override = { "eslint_d" }
+      -- Add global linters.
+      vim.list_extend(names, lint.linters_by_ft["*"] or {})
+
+      -- Run linters.
+      if #names > 0 then
+        -- Check the if the linter is available, otherwise it will throw an error.
+        for _, name in ipairs(names) do
+          local cmd = vim.fn.executable(name)
+          if cmd == 0 then
+            vim.notify("Linter " .. name .. " is not available", vim.log.levels.INFO)
+            return
+          else
+            -- Run the linter
+            lint.try_lint(name)
+          end
         end
       end
-      lint.try_lint(names_override)
     end,
   })
 end
+
 
 return M

@@ -1,7 +1,6 @@
 local M = {
   "folke/trouble.nvim",
   cmd = "Trouble",
-  optional = true,
   specs = {
     "folke/snacks.nvim",
     opts = function(_, opts)
