@@ -1,28 +1,32 @@
-require("bryan.launch")
-require("bryan.options")
-require("bryan.keymaps")
-require("bryan.autocmds")
+require "bryan.launch"
+require "bryan.options"
+require "bryan.keymaps"
+require "bryan.autocmds"
 
-spec("bryan.colorscheme")
-spec("bryan.junk-drawer")
-spec("bryan.bufdelete")
-spec("bryan.which-key")
-spec("bryan.cmp")
-spec("bryan.mason")
-spec("bryan.lsp-config")
-spec("bryan.telescope")
-spec("bryan.treesitter")
+spec "bryan.colorscheme"
+spec "bryan.junk-drawer"
+spec "bryan.bufdelete"
+spec "bryan.which-key"
+spec "bryan.cmp"
+--spec "bryan.mason"
+--spec "bryan.lsp-config"
+
+--spec "bryan.telescope"
+spec "bryan.snacks-picker"
+
+spec "bryan.treesitter"
 -- spec("bryan.typescript")
-spec("bryan.lualine")
-spec("bryan.none-ls")
-spec("bryan.formatting")
-spec("bryan.linting")
-spec("bryan.trouble")
-spec("bryan.neogit")
-spec("bryan.ai")
-spec("bryan.nvim-tree")
-spec("bryan.autopairs")
-spec("bryan.noice")
-spec("bryan.cloak")
+spec "bryan.lualine"
+--spec "bryan.none-ls"
+--spec "bryan.formatting"
+--spec "bryan.linting"
+spec "bryan.trouble"
+spec "bryan.neogit"
+spec "bryan.ai"
+--spec "bryan.nvim-tree"
+spec "bryan.autopairs"
+spec "bryan.noice"
+spec "bryan.cloak"
 
-require("bryan.lazy")
+require "bryan.lsp"
+require "bryan.lazy"
