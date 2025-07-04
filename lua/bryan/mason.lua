@@ -7,15 +7,16 @@ local M = {
 }
 
 M.servers = {
-  -- "eslint",
+  "eslint",
   "lua_ls",
   --"cssls",
   -- "html-lsp",
+  "gopls",
   "ts_ls",
   "astro",
   "pyright",
   "bashls",
-  "jsonls",
+  -- "jsonls",
   "yamlls",
   "marksman",
   "tailwindcss",
@@ -34,6 +35,7 @@ function M.config()
   })
   require("mason-lspconfig").setup({
     ensure_installed = M.servers,
+    automatic_installation = true,
   })
 end
 

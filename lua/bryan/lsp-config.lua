@@ -68,6 +68,7 @@ function M.config()
     "jsonls",
     "yamlls",
     "tailwindcss",
+    "gopls",
     --"eslint",
     "prismals",
     "svelte",

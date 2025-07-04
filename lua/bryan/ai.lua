@@ -42,6 +42,10 @@ M.config = function()
     behavior = {
       auto_suggestions = true,
     },
+    rules = {
+      project_dir = ".avante/rules", -- relative to project root, can also be an absolute path
+      global_dir = "~/.config/avante/rules", -- absolute path
+    },
   })
 end
 
