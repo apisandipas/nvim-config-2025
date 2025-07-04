@@ -4,7 +4,8 @@ M = {
   "folke/snacks.nvim",
   opts = {
     picker = {},
-    explorer = {},
+    explorer = {
+    },
   },
   -- stylua: ignore
   keys = {
