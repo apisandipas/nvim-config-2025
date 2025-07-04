@@ -38,3 +38,6 @@ opt.splitbelow = true
 -- disable swap file
 opt.swapfile = false
 opt.smoothscroll = true
+
+vim.o.shell = '/usr/bin/zsh'
+vim.o.shellcmdflag = '-ic'

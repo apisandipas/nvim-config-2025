@@ -7,8 +7,9 @@ local M = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-    "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
+    --"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+    -- "HakonHarnesrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions,
+    "folke/snacks.nvim", -- for input provider snacks
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
@@ -26,14 +27,14 @@ local M = {
         },
       },
     },
-    {
-      -- Make sure to set this up properly if you have lazy=true
-      "MeanderingProgammer/render-markdown.nvim",
-      opts = {
-        file_types = { "markdown", "Avante" },
-      },
-      ft = { "markdown", "Avante" },
-    },
+    -- {
+    --   -- Make sure to set this up properly if you have lazy=true
+    --   "MeanderingProgammer/render-markdown.nvim",
+    --   opts = {
+    --     file_types = { "markdown", "Avante" },
+    --   },
+    --   ft = { "markdown", "Avante" },
+    -- },
   },
 }
 
