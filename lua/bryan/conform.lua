@@ -1,19 +1,19 @@
 local Lsp = require "utils.lsp"
 
----Run the first available formatter followed by more formatters
----@param bufnr integer
----@param ... string
----@return string
-local function first(bufnr, ...)
-  local conform = require "conform"
-  for i = 1, select("#", ...) do
-    local formatter = select(i, ...)
-    if conform.get_formatter_info(formatter, bufnr).available then
-      return formatter
-    end
-  end
-  return select(1, ...)
-end
+-- ---Run the first available formatter followed by more formatters
+-- ---@param bufnr integer
+-- ---@param ... string
+-- ---@return string
+-- local function first(bufnr, ...)
+--   local conform = require "conform"
+--   for i = 1, select("#", ...) do
+--     local formatter = select(i, ...)
+--     if conform.get_formatter_info(formatter, bufnr).available then
+--       return formatter
+--     end
+--   end
+--   return select(1, ...)
+-- end
 
 return {
   "stevearc/conform.nvim",
@@ -40,20 +40,14 @@ return {
       -- Install prettier globally.
       -- npm install -g prettier@latest
       -- Install dprint globally.
-      ["json"] = { "biome", "dprint", stop_after_first = true },
+      ["json"] = { "dprint", stop_after_first = true },
       ["markdown"] = { "prettierd", "prettier", "dprint", stop_after_first = true },
       ["markdown.mdx"] = { "prettierd", "prettier", "dprint", stop_after_first = true },
-      ["javascript"] = { "biome", "deno_fmt", "prettierd", "prettier", "dprint", stop_after_first = true },
-      ["javascriptreact"] = function(bufnr)
-        return { "rustywind", first(bufnr, "biome", "deno_fmt", "prettierd", "prettier", "dprint") }
-      end,
-      ["typescript"] = { "biome", "deno_fmt", "prettierd", "prettier", "dprint", stop_after_first = true },
-      ["typescriptreact"] = function(bufnr)
-        return { "rustywind", first(bufnr, "biome", "deno_fmt", "prettierd", "prettier", "dprint") }
-      end,
-      ["svelte"] = function(bufnr)
-        return { "rustywind", first(bufnr, "biome", "deno_fmt", "prettierd", "prettier", "dprint") }
-      end,
+      ["javascript"] = { "prettier" },
+      ["javascriptreact"] = { "prettier" },
+      ["typescript"] = { "prettier" },
+      ["typescriptreact"] = { "prettier" },
+      ["svelte"] = { "prettier" },
     },
     formatters = {
       biome = {

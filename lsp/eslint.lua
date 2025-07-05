@@ -33,9 +33,9 @@ return {
     validate = "on",
     packageManager = nil,
     useESLintClass = false,
-    experimental = {
-      useFlatConfig = false,
-    },
+    -- experimental = {
+    --   useFlatConfig = false,
+    -- },
     codeActionOnSave = {
       enable = false,
       mode = "all",

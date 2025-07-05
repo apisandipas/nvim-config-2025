@@ -5,7 +5,7 @@ M = {
   opts = {
     picker = {},
     explorer = {},
-    dashboard = {},
+    -- dashboard = {},
   },
   -- stylua: ignore
   keys = {
