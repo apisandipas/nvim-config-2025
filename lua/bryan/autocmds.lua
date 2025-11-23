@@ -41,19 +41,3 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
     vim.opt_local.cursorline = false
   end,
 })
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "NvimTree_*",
-  callback = function()
-    vim.opt.laststatus = 0 -- Hide Lualine
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufLeave", {
-  pattern = "NvimTree_*",
-  callback = function()
-    vim.opt.laststatus = 2 -- Show Lualine
-  end,
-})
-
-

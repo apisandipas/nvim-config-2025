@@ -4,7 +4,6 @@ M = {
   "saghen/blink.cmp",
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "Kaiser-Yang/blink-cmp-avante",
   },
   version = "1.*",
   opts = {
@@ -37,16 +36,7 @@ M = {
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
     },
     sources = {
-      default = { "avante", "lsp", "path", "snippets", "buffer" },
-      providers = {
-        avante = {
-          module = "blink-cmp-avante",
-          name = "Avante",
-          opts = {
-            -- options for blink-cmp-avante
-          },
-        },
-      },
+      default = { "lsp", "path", "snippets", "buffer" },
     },
   },
 }

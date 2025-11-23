@@ -14,7 +14,6 @@ M.config = function()
     { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit" },
     { "<leader>h", "<cmd>nohlsearch<CR>", desc = "NOHL" },
     { "<leader>b", group = "+buffers" },
-    --{ "<leader>ba", "<cmd>lua require('telescope.builtin').buffers()<CR>", desc = "List Buffers" },
     { "<leader>bw", "<cmd>w<CR>", desc = "Write Buffer" },
     { "<leader>bs", "<cmd>w<CR>", desc = "Save (Write) Buffer" },
     { "<leader>bd", "<cmd>lua require('bufdelete').bufdelete(0, true)<CR>", desc = "Delete Buffer" },

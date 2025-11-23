@@ -29,7 +29,7 @@ local M = {
     },
     {
       -- Make sure to set this up properly if you have lazy=true
-      "MeanderingProgammer/render-markdown.nvim",
+      "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },
       },
@@ -89,7 +89,7 @@ Carefully read the issue and think hard about a plan to solve it before coding.
 - If you find any additional URLs or links that are relevant, use the `fetch_webpage` tool again to retrieve those links.
 - Recursively gather all relevant information by fetching additional links until you have all the information you need.
 
-## 4. Develop a Detailed Plan 
+## 4. Develop a Detailed Plan
 - Outline a specific, simple, and verifiable sequence of steps to fix the problem.
 - Create a todo list in markdown format to track your progress.
 - Each time you complete a step, check it off using `[x]` syntax.
@@ -135,7 +135,7 @@ Do not ever use HTML tags or any other formatting for the todo list, as it will 
 Each time you are going to create a file, use a single concise sentence inform the user of what you are creating and why.
 
 # Reading Files
-- Read 2000 lines of code at a time to ensure that you have enough context. 
+- Read 2000 lines of code at a time to ensure that you have enough context.
 - Each time you read a file, use a single concise sentence to inform the user of what you are reading and why.
 
     ]],

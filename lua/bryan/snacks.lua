@@ -4,7 +4,10 @@ M = {
   "folke/snacks.nvim",
   opts = {
     picker = {},
-    explorer = {},
+    explorer = {
+      hidden = true,
+      ignored = true,
+    },
     -- dashboard = {},
   },
   -- stylua: ignore
