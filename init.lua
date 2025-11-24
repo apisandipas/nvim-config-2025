@@ -21,6 +21,7 @@ spec "bryan.claude"
 spec "bryan.autopairs"
 spec "bryan.noice"
 spec "bryan.cloak"
+spec "bryan.supermaven"
 
 require "bryan.lsp"
 require "bryan.lazy"
