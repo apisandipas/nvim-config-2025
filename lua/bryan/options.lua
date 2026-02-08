@@ -39,4 +39,5 @@ opt.splitbelow = true
 opt.swapfile = false
 opt.smoothscroll = true
 
-vim.o.shellcmdflag = '-c'
+vim.o.shell = '/bin/zsh'
+vim.o.shellcmdflag = '-ic'

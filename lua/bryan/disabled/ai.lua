@@ -142,6 +142,9 @@ Each time you are going to create a file, use a single concise sentence inform t
     behavior = {
       auto_suggestions = true,
     },
+    vendor = {
+      shell = "/bin/zsh"  -- or "/bin/bash" if you prefer
+    }
     -- rules = {
     --   project_dir = ".avante/rules", -- relative to project root, can also be an absolute path
     --   global_dir = "~/.config/avante/rules", -- absolute path
