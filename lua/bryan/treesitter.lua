@@ -17,7 +17,7 @@ function M.config()
   })
 
   require("nvim-treesitter.configs").setup({
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "org" }, -- put the language you want in this array
+    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "org", "regex", "vim" }, -- put the language you want in this array
     ignore_install = { "" },
     sync_install = false,
     highlight = {
